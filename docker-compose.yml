@@ -1,6 +1,7 @@
 version: '3'
 services:
   api:
+    platform: linux/amd64
     container_name: api
     image: kasiapetka/mgr-prod:api
     ports: 
@@ -11,6 +12,7 @@ services:
       - MONGO_URI=mongodb+srv://root:r00t@cluster0.msmbg.mongodb.net/mgr-opti?retryWrites=true&w=majority
   
   react:
+    platform: linux/arm64
     container_name: react
     image: kasiapetka/mgr-prod:react
     ports:

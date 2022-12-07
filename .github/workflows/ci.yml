@@ -27,6 +27,7 @@ jobs:
         name: Build and push react app
         uses: docker/build-push-action@v3
         with:
+          platform: "linux/amd64"
           context: "{{defaultContext}}:rea-app"
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/mgr-prod:react
@@ -34,6 +35,7 @@ jobs:
         name: Build and push nodejs app
         uses: docker/build-push-action@v3
         with:
+          platform: "linux/amd64"
           context: "{{defaultContext}}:opti-frame-api"
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/mgr-prod:api

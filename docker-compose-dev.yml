@@ -1,6 +1,7 @@
 version: '3'
 services:
   api: 
+    platform: linux/amd64
     container_name: api
     image: mgr-api
     build: 
@@ -17,6 +18,7 @@ services:
       - '/app/node_modules'
 
   react:
+    platform: linux/amd64
     container_name: react
     image: mgr-rea
     build:
