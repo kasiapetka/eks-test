@@ -1,0 +1,22 @@
+.Search {
+  display: flex;
+  align-items: center;
+
+  input {
+    background: $primary;
+    color: white;
+    padding: 0.5em 1.5em;
+    border: 1px solid $secondary;
+    border-radius: 20px;
+
+    &:focus {
+      transition: 0.2s;
+      outline: none;
+      box-shadow: 0 0 0 3px $tertiary;
+    }
+
+    &::placeholder {
+      color: $secondary;
+    }
+  }
+}

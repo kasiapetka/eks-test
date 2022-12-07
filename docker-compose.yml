@@ -1,0 +1,24 @@
+version: '3'
+services:
+  api:
+    container_name: api
+    image: kasiapetka/mgr-api-prod
+    ports: 
+      - 3001:3001
+    networks: 
+      - net
+    environment:
+      - MONGO_URI=mongodb+srv://root:r00t@cluster0.msmbg.mongodb.net/mgr-opti?retryWrites=true&w=majority
+  
+  react:
+    container_name: react
+    image: kasiapetka/mgr-rea-prod
+    ports:
+      - 3000:3000
+    networks:
+      - net
+    depends_on:
+      - api
+
+networks:
+  net:

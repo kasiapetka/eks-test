@@ -1,0 +1,39 @@
+version: '3'
+services:
+  api: 
+    container_name: api
+    image: mgr-api
+    build: 
+      context: ./opti-frame-api
+      dockerfile: Dockerfile.dev
+    ports:
+      - 3001:3001
+    networks:
+      - net
+    env_file:
+      - ./opti-frame-api/.env
+    volumes:
+      - '$PWD/opti-frame-api:/app'
+      - '/app/node_modules'
+
+  react:
+    container_name: react
+    image: mgr-rea
+    build:
+      context: ./rea-app
+      dockerfile: Dockerfile.dev
+    ports:
+      - 3000:3000
+    networks:
+      - net
+    volumes:
+      - "$PWD/rea-app:/app"
+      - "/app/node_modules"
+    depends_on:
+      - api
+
+networks:
+  net:
+
+    
+  
