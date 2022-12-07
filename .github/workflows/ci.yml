@@ -27,13 +27,13 @@ jobs:
         name: Build and push react app
         uses: docker/build-push-action@v3
         with:
-          context: ./rea-app
+          context: "{{defaultContext}}:rea-app"
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/mgr-prod:react
       -
         name: Build and push nodejs app
         uses: docker/build-push-action@v3
         with:
-          context: ./opti-frame-api
+          context: "{{defaultContext}}:opti-frame-api"
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/mgr-prod:api
