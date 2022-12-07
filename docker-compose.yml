@@ -12,7 +12,7 @@ services:
       - MONGO_URI=mongodb+srv://root:r00t@cluster0.msmbg.mongodb.net/mgr-opti?retryWrites=true&w=majority
   
   react:
-    platform: linux/arm64
+    platform: linux/amd64
     container_name: react
     image: kasiapetka/mgr-prod:react
     ports:
