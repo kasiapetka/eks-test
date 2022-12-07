@@ -29,11 +29,11 @@ jobs:
         with:
           context: ./rea-app
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/mgr-rea-prod:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/mgr-prod:react
       -
         name: Build and push nodejs app
         uses: docker/build-push-action@v3
         with:
           context: ./opti-frame-api
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/mgr-api-prod:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/mgr-prod:api

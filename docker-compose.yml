@@ -2,7 +2,7 @@ version: '3'
 services:
   api:
     container_name: api
-    image: kasiapetka/mgr-api-prod
+    image: kasiapetka/mgr-prod:api
     ports: 
       - 3001:3001
     networks: 
@@ -12,7 +12,7 @@ services:
   
   react:
     container_name: react
-    image: kasiapetka/mgr-rea-prod
+    image: kasiapetka/mgr-prod:react
     ports:
       - 3000:3000
     networks:
